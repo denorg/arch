@@ -1,41 +1,25 @@
-# 🏁 Deno Starter
+# 🏁 Arch
 
-This is a starter template for building Deno packages in TypeScript, with GitHub Actions-powered CI, tests, CLI, and Semantic Release on GitHub and npm.
+This module is used to determine if the user is on a 32-bit vs. 64-bit operating system to offer the right app installer
 
-[![Deno CI](https://github.com/denorg/starter/workflows/Deno%20CI/badge.svg)](https://github.com/denorg/starter/actions)
-[![GitHub](https://img.shields.io/github/license/denorg/starter)](https://github.com/denorg/starter/blob/master/LICENSE)
-[![Contributors](https://img.shields.io/github/contributors/denorg/starter)](https://github.com/denorg/starter/graphs/contributors)
+Use this package to get the actual operating system CPU architecture.
+
+[![Deno CI](https://github.com/denorg/arch/workflows/Deno%20CI/badge.svg)](https://github.com/denorg/arch/actions)
+[![GitHub](https://img.shields.io/github/license/denorg/arch)](https://github.com/denorg/arch/blob/master/LICENSE)
+[![Contributors](https://img.shields.io/github/contributors/denorg/arch)](https://github.com/denorg/arch/graphs/contributors)
 [![Deno Starter](https://img.shields.io/badge/deno-starter-brightgreen)](https://denorg.github.io/starter/)
 [![Made by Denorg](https://img.shields.io/badge/made%20by-denorg-0082fb)](https://github.com/denorg)
-[![TypeScript](https://img.shields.io/badge/types-TypeScript-blue)](https://github.com/denorg/starter)
+[![TypeScript](https://img.shields.io/badge/types-TypeScript-blue)](https://github.com/denorg/arch)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
-
-## 💡 How to use
-
-1. [Create a new repository](https://github.com/denorg/starter/generate) using this template
-2. Update the project name ("Deno Starter") from the first line in `README.md`
-3. Find and replace "denorg/starter" with your "username/repository" in `README.md`
-4. Update the "Getting started" guide with your exported functions' names
-5. In `.github/workflows/*.yml` files, add additional permissions after `deno test`
-6. Setup Semantic Release
-  - Add a repository secret `NPM_TOKEN` with your npm token
-  - In `.github/workflows/deno.yml`, find and replace "denorg/starter" with your "username/repository"
-7. Remove this section ("How to use") after setting up your respoitory
-
-If you're not building a Denorg project, the following steps are required too:
-
-1. Remove the "A project by Denorg..." footer from `README.md`
-2. Remove the "Made by Denorg" shield from the `README.md` badges section
-3. Change the "Denorg" name to yours in `LICENSE` and under "License" in `README.md`
 
 ## ⭐ Getting started
 
-Import the `mode` function and use it:
+Import the default function and use it:
 
 ```ts
-import { mode } from "https://raw.githubusercontent.com/denorg/starter/master/mod.ts";
+import arch from "https://raw.githubusercontent.com/denorg/arch/master/mod.ts";
 
-const result = mode();
+const result = await arch();
 ```
 
 ### CLI with [DPX](https://github.com/denorg/dpx)
@@ -43,7 +27,7 @@ const result = mode();
 After [installing DPX](https://github.com/denorg/dpx), you can directly use the CLI using the `dpx` command:
 
 ```bash
-dpx --allow-read starter <arguments>
+dpx --allow-read arch <arguments>
 ```
 
 ### CLI
@@ -51,19 +35,19 @@ dpx --allow-read starter <arguments>
 Alternatively, you can use it directly from the CLI by using `deno run`:
 
 ```bash
-deno run --allow-read https://raw.githubusercontent.com/denorg/starter/master/cli.ts <arguments>
+deno run --allow-read https://raw.githubusercontent.com/denorg/arch/master/cli.ts <arguments>
 ```
 
 You can also install it globally using the following:
 
 ```bash
-deno install --allow-read -n starter https://raw.githubusercontent.com/denorg/starter/master/cli.ts
+deno install --allow-read -n arch https://raw.githubusercontent.com/denorg/arch/master/cli.ts
 ```
 
 Then, the package is available to run:
 
 ```bash
-starter <arguments>
+arch <arguments>
 ```
 
 ### Configuration
@@ -79,6 +63,10 @@ Run tests:
 ```bash
 deno test --allow-read
 ```
+
+## ⭐ Related Work
+
+- [feross/arch](https://github.com/feross/arch) is the Node.js project serving as inspiration for this one
 
 ## 📄 License
 

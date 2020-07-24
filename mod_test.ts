@@ -1,6 +1,7 @@
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
-import { mode } from "./mod.ts";
+import arch from "./mod.ts";
 
-Deno.test("test starter function", async (): Promise<void> => {
-  assertEquals(mode(), 0);
+Deno.test("test default function", async (): Promise<void> => {
+  console.log(arch());
+  assertEquals(await arch(), "x64");
 });
