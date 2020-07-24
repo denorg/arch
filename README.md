@@ -1,4 +1,4 @@
-# 🏁 Arch
+# 🤖 Arch
 
 This module is used to determine if the user is on a 32-bit vs. 64-bit operating system to offer the right app installer
 
